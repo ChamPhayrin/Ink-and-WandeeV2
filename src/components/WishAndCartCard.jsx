@@ -1,9 +1,9 @@
-import React, {useNavigate} from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function WishAndCartCard(props) {
 
   const navigate = useNavigate()
-
   const deleteFromCart = async (book) => {
     try {
       const response = await fetch('https://ink-and-wandeev2-be.onrender.com/deleteCart', {
