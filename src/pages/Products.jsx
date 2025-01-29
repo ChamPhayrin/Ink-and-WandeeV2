@@ -4,8 +4,8 @@ import DisplayCard from "../components/DisplayCard";
 export default function Products() {
 	const [books, setBooks] = useState([]);
 	const [filteredBooks, setFilteredBooks] = useState([]);
-	const [priceFilter, setPriceFilter] = useState("all"); // "all", "lessThan10", "above10"
-	const [sortCriteria, setSortCriteria] = useState("title-asc"); // "title-asc", "title-desc", "price-asc", "price-desc"
+	const [priceFilter, setPriceFilter] = useState("all"); 
+	const [sortCriteria, setSortCriteria] = useState("title-asc"); 
 	const search = useRef(null);
 
 	useEffect(() => {
@@ -109,7 +109,7 @@ export default function Products() {
 							title={book.title}
 							author={book.author}
 							price={book.retail_price === 'Unavailable' ? book.retail_price : `$${book.retail_price}`}
-							genres={book.genre} // Ensure genres is always an array
+							genres={book.genre} 
 							book={book}
 						/>
 					))

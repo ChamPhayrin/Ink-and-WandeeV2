@@ -28,6 +28,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors(corsOptions));
 
+
+
+
+//Search Endpoints
 app.get("/searchBooks", (req, res) => {
 	const query = req.query.query;
 
@@ -49,6 +53,7 @@ app.get("/searchBooksByGenre", (req, res) => {
 });
 
 
+//User Interaction End Points
 app.post('/message', async (req, res) =>{
   const {user_id, fullname, email, subject, message} = req.body
 
@@ -161,18 +166,6 @@ app.post("/signin", (req, res) => {
 	});
 });
 
-// app.get("/protected", authenticateToken, (req, res) => {
-// 	// Access user data from the decoded token (which was attached to the request object)
-// 	const { user_id, username, is_admin } = req.user;
-// 	res.send({
-// 		message: "You have access to this route!",
-// 		user: {
-// 			user_id,
-// 			username,
-// 			is_admin,
-// 		},
-// 	});
-// });
 
 app.get('/bookProducts', (req, res) => {
   const selectQ = 'SELECT * FROM products';
@@ -183,7 +176,7 @@ app.get('/bookProducts', (req, res) => {
 
 })
 
-
+//Cart & Wishlist End Points
 app.post('/addCart', (req, res) => {
   const book = req.body.book;
   const user_id = req.body.user_id;
@@ -327,6 +320,8 @@ app.post('/getWishlist', (req, res) =>{
   })
 })
 
+
+//Admin End Points
 app.get('/getAllUsers', (req, res) => {
   const selectQ = 'SELECT * FROM users'
 
