@@ -4,31 +4,23 @@ const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const slides = [
     {
-      title: "Best Fantasy Book",
-      subtitle: "A Song of Ice and Fire: Book 1",
-      description: "George RR Martin",
-      image: "https://www.aiobot.com/wp-content/uploads/2018/07/Adidas-Game-of-Thrones.jpg", // Replace with your image URL
+      title: "Game Of Thrones",
+      image: "https://wallpapercave.com/wp/wp2131761.jpg",
       backgroundColor: "#5b8",
     },
     {
-      title: "Best Thriller Book",
-      subtitle: "Another Amazing Slide",
-      description: "Description for Slide 2",
-      image: "https://via.placeholder.com/800x400?text=Slide+2", // Replace with your image URL
+      title: "Percy Jackson",
+      image: "https://w0.peakpx.com/wallpaper/755/883/HD-wallpaper-percy-jackson-and-the-olympians-2023.jpg", // Replace with your image URL
       backgroundColor: "#85b",
     },
     {
-      title: "Best Meditation Book",
-      subtitle: "Yet Another Slide",
-      description: "Description for Slide 3",
-      image: "https://via.placeholder.com/800x400?text=Slide+3", // Replace with your image URL
+      title: "Hunger Games",
+      image: "https://wallpapercave.com/wp/wNjnAvq.jpg", // Replace with your image URL
       backgroundColor: "#e95",
     },
     {
-      title: "Best Biography Book",
-      subtitle: "Final Slide",
-      description: "Description for Slide 4",
-      image: "https://via.placeholder.com/800x400?text=Slide+4", // Replace with your image URL
+      title: "It Ends with Us",
+      image: "https://www.itendswithus.movie/images/share.jpg", // Replace with your image URL
       backgroundColor: "#e59",
     },
   ];
@@ -51,7 +43,7 @@ const Slider = () => {
       <div className="slider" style={{ transform: `translateX(-${currentIndex * 100}vw)` }}>
         {slides.map((slide, index) => (
           <div key={index} style={{ background: slide.backgroundColor, width: '100vw', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', color: 'white' }}>
-            <img src={slide.image} alt={slide.title} style={{ width: '100%', height: 'auto', borderRadius: '10px' }} />
+            <img src={slide.image} alt={slide.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             <h1>{slide.title}</h1>
             <h2>{slide.subtitle}</h2>
             <p>{slide.description}</p>

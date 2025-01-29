@@ -1083,6 +1083,26 @@ textarea:not([rows]) {
 .container #searchContainer button:hover {
   background-color: rgba(101, 170, 101, 0.415);
 }
+.container .no-results {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #666;
+  margin-top: 2rem;
+}
+.container #filterSort {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.container #filterSort #sort, .container #filterSort #filters {
+  display: flex;
+  align-items: center;
+}
+.container #filterSort #sort h3, .container #filterSort #filters h3 {
+  margin-right: 10px;
+}
 .container #productGrid {
   display: grid;
   grid-template-columns: repeat(4, 25%);
@@ -1125,6 +1145,9 @@ textarea:not([rows]) {
   }
   .container #searchContainer {
     width: 90%;
+  }
+  .container #filterSort {
+    justify-content: flex-start;
   }
 }
 .container {
@@ -1578,7 +1601,7 @@ textarea:not([rows]) {
 }
 
 .prevNext button {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #739c6b;
   color: white;
   border: none;
   padding: 10px;
@@ -1596,7 +1619,7 @@ textarea:not([rows]) {
 }
 
 .bullets button {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #739c6b;
   color: white;
   border: none;
   padding: 5px;

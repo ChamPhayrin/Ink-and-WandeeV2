@@ -59,9 +59,11 @@ app.post('/message', async (req, res) =>{
 
   const insertQ = 'INSERT INTO user_messages (user_id, full_name, email, subject, message) VALUES (?, ?, ?, ?, ?)'
 
-    connection.query(insertQ, [user_id || null, fullname, email, subject, message], (err, result) =>{
-      if (err) throw err;
-    })
+  connection.query(insertQ, [user_id || null, fullname, email, subject, message], (err, result) =>{
+    if (err) return res.send({error: err});
+    console.log('insert success')
+    return res.send({success: 'insert successful'})
+  })
   
 })
 

@@ -38,7 +38,9 @@ export default function Home() {
 						/>
 					</div>
 				</section>
-
+				<div className="title">
+					<h2>Best Book to Series Adaptaions</h2>
+				</div>
 				<Slider />
 				<GenreDisplay genre="Young Adult Fiction" />
 				<GenreDisplay genre="Juvenile Nonfiction" />

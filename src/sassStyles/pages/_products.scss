@@ -72,6 +72,28 @@
     }
   }
 
+  .no-results {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #666;
+    margin-top: 2rem;
+  }
+
+  #filterSort{
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    #sort, #filters{
+      display: flex;
+      align-items: center;
+      h3{
+        margin-right: 10px;
+      }
+    }
+  }
+
   /* Product Grid */
   #productGrid {
     display: grid;
@@ -127,6 +149,9 @@
 
     #searchContainer {
       width: 90%;
+    }
+    #filterSort{
+      justify-content: flex-start;
     }
   }
 }
