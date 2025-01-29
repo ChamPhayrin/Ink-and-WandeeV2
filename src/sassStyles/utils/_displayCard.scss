@@ -1,0 +1,139 @@
+@use '../abstracts/' as a;
+
+.displayCard {
+  width: 20vw;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  transition: all 0.3s;
+  @include a.flex(column, center, start);
+  border-radius: 3px;
+  padding: a.toRem(10);
+  overflow: hidden;
+  margin: a.toRem(5) 0;
+  height: 100%;
+  border: rgba(0, 0, 0, 0.512) 1px solid; 
+  display: flex;
+  justify-content: space-between;
+
+  &:hover {
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .displayCardImg {
+    width: 100%;/* Set a maximum height */
+    height: 90%;
+    overflow: hidden;
+    @include a.flex();
+
+    img {
+      object-fit: cover; /* Maintain aspect ratio */
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .displayCardDescription {
+    padding: a.toRem(10);
+    width: 100%;
+    @include a.flex(column, space-between, start);
+
+    h1, h2, h4, p {
+      text-transform: uppercase;
+      margin: 0;
+      letter-spacing: 1px;
+      color: black;
+    }
+
+    p, h4 {
+      display: -webkit-box;
+      max-width: 200px;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      color: #727272;
+      margin: a.toRem(5) 0;
+    }
+
+    p {
+      font-size: a.toRem(12);
+    }
+
+    h2 {
+      margin: a.toRem(10) 0;
+      font-weight: 900;
+      font-size: a.toRem(25);
+    }
+
+    .displayCardBtns {
+      width: 100%;
+      padding: a.toRem(10) 0;
+
+      button {
+        margin: a.toRem(5) 0;
+        outline: 0;
+        border: 0;
+        background: none;
+        border: 1px solid black;
+        padding: 8px 0;
+        color: #515151;
+        text-transform: uppercase;
+        width: 100%;
+        transition: all 0.3s ease;
+        font-weight: 500;
+
+        &:hover {
+          border: 1px solid #aedaa6;
+          color: #aedaa6;
+          cursor: pointer;
+        }
+      }
+
+      .removeBtn {
+        &:hover {
+          border: 1px solid red;
+          color: red;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .displayCard {
+    background-image: url('../assets/example.png');
+    padding: 0;
+    margin: a.toRem(10) 0;
+    @include a.flex(column, center, start);
+    width: 90%;
+    height: 45vh;
+
+    .displayCardImg {
+      width: 100%;
+      height: auto;
+      display: block;
+      max-height: a.toRem(200); /* Set a maximum height for smaller screens */
+    }
+
+    .displayCardDescription {
+      width: 100%;
+      background-color: rgba(a.$white-color, .9);
+      backdrop-filter: blur(10px);
+      height: auto;
+
+      h2 {
+        font-size: a.toRem(18);
+        display: -webkit-box;
+        max-width: 200px;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        padding: 0;
+      }
+
+
+      h4 {
+        font-size: a.toRem(12);
+      }
+    }
+  }
+}

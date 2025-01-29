@@ -1,0 +1,149 @@
+@use '../abstracts' as *;
+
+.container {
+  max-width: 90vw;
+  margin: 0 auto;
+  padding: $padding-medium 0;
+}
+
+.adminContainer {
+  background-color: rgba($secondary-color, .3);
+  border-radius: 10px;
+  padding: $padding-medium;
+  box-shadow: $box-shadow-light;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: $margin-small;
+  font-size: $font-size-large;
+  color: $dark-color;
+}
+
+#messagesWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $margin-small;
+}
+
+#messagesWrapperHeader {
+  small {
+    margin-right: $margin-small;
+    color: rgb(44, 103, 155);
+  }
+
+  small:hover {
+    cursor: pointer;
+  }
+
+  .active {
+    text-decoration: underline;
+  }
+  button {
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 25px;
+    color: rgb(255, 251, 246);
+    font-weight: bold;
+    background-color: rgb(101, 170, 101);
+    border: none;
+    cursor: pointer;
+  
+    &:hover {
+      background-color: #6b0904;
+    }
+  }
+}
+
+
+.message {
+  background-color: $white-color;
+  border-radius: 10px;
+  padding: $padding-medium;
+  box-shadow: $box-shadow-light;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin: $margin-small 0;
+}
+
+.message:hover {
+  transform: translateY(-5px);
+  box-shadow: $box-shadow-heavy;
+}
+
+.messageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $secondary-text-color;
+  padding-bottom: $padding-small;
+  margin-bottom: $margin-small;
+}
+
+.messageName {
+  font-size: $font-size-medium;
+  color: $dark-color;
+  margin: 0;
+}
+
+.messageSubject {
+  font-size: $font-size-small;
+  color: $primary-color;
+  margin: 0;
+}
+
+.messageContent {
+  font-size: $font-size-base;
+  color: $secondary-text-color;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.emailButton {
+  display: inline-block;
+  background-color: $primary-color;
+  color: $light-color;
+  padding: $padding-small;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: $margin-small;
+}
+
+.emailButton:hover {
+  background-color: $hover-color;
+  transform: scale(1.05);
+}
+
+.userCard {
+  background-color: $white-color;
+  border-radius: 8px;
+  padding: $padding-medium;
+  box-shadow: $box-shadow-light;
+  margin-bottom: $margin-small;
+  transition: transform 0.2s;
+}
+
+.userCard:hover {
+  transform: translateY(-5px);
+}
+
+.deleteButton {
+  background-color: #ff4d4d;
+  color: $light-color;
+  border: none;
+  padding: $padding-small;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.deleteButton:hover {
+  background-color: #ff1a1a;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0;
+  }
+}

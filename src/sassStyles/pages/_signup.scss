@@ -1,0 +1,84 @@
+@use '../abstracts' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+#signupPage {
+  font-family: 'Poppins', sans-serif;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $background-color;
+  background-image: url('/Users/ChamngaryPhayrin/Desktop/REACT-Eccomerce/eccomerce/src/assets/Animated Shape.svg');
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
+
+  #signupTitle {
+    padding-bottom: $padding-small;
+    text-align: center;
+  }
+
+  #signupContainer {
+    background-color: $white-color;
+    min-width: 40vw;
+    display: flex;
+    padding: $padding-small 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: $box-shadow-light;
+
+    button {
+      width: 60%;
+      padding: 10px;
+      margin: 15px 0;
+      border-radius: 25px;
+      color: $white-color;
+      font-weight: bold;
+      background-color: $primary-color;
+      border: none;
+      cursor: pointer;
+      transition: background-color $transition-speed;
+
+      &:hover {
+        background-color: $hover-color;
+      }
+    }
+
+    .inputContainer {
+      padding: $padding-small 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 70%;
+
+      label {
+        padding: 0 0 10px 0;
+        color: $text-color;
+      }
+
+      input {
+        padding: 10px;
+        border-radius: 2px;
+        border: 1px solid rgb(152, 152, 152);
+        font-size: $font-size-base;
+        color: $text-color;
+
+        &:focus {
+          outline: none;
+          border-color: $primary-color;
+        }
+      }
+    }
+
+    #signupLinks {
+      padding: 15px;
+      width: 80%;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}

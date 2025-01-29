@@ -1,0 +1,185 @@
+@use '../abstracts' as *;
+
+.title {
+  margin: 0 !important;
+}
+
+.cartContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+  margin-top: $margin-small; // Use a defined margin variable
+}
+
+#cardGrid {
+
+  .title {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+      padding: $padding-small 0;
+      font-size: $font-size-medium;
+      color: #6b0904;
+      font-weight: 10000;
+  }
+
+  .gridRow {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    align-items: center;
+    justify-content: center;
+
+    .cardImg {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      padding: $padding-small; // Use a defined padding variable
+
+      img {
+        width: 50%;
+      }
+    }
+
+    h5 {
+      font-size: $font-size-medium; // Use a defined font size variable
+      text-align: left;
+    }
+
+    .x {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+
+      &:hover {
+        color: $hover-color; // Use a defined hover color variable
+      }
+    }
+  }
+}
+
+.borderSide {
+  border-right: 1px solid $dark-color; // Use a defined color variable instead of black
+}
+
+.borderTop {
+  border-top: 1px solid rgba(0, 0, 0, 0.196);
+}
+
+.padding {
+  padding: $padding-medium; // Use a defined padding variable
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#cardDisplayWrapper {
+  text-align: center;
+}
+
+#checkoutContainer {
+  margin-left: $margin-small; // Use a defined margin variable
+  min-width: 30%;
+  background-color: $light-color; // Use a defined color variable instead of aliceblue
+  border-radius: 2px;
+  padding: $padding-small; // Use a defined padding variable
+  border: 1px solid $dark-color; // Use a defined color variable instead of black
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center; // Fixed to center instead of space-evenly
+
+  .title {
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+    font-size: $font-size-large; // Use a defined font size variable
+  }
+
+  .checkoutWrapper {
+    padding: $padding-small; // Use a defined padding variable
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 2px;
+    height: 25vh;
+    width: 100%;
+  }
+
+  .preTotal {
+    width: 100%;
+    border-bottom: 1px solid $dark-color; // Use a defined color variable instead of black
+  }
+
+  .checkoutRow {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $padding-small; // Use a defined padding variable
+  }
+
+}
+
+.buttonWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+  button {
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 25px;
+    color: rgb(255, 251, 246);
+    font-weight: bold;
+    background-color: rgb(101, 170, 101);
+    border: none;
+    cursor: pointer;
+  
+    &:hover {
+      background-color: rgba(101, 170, 101, 0.415);
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .cartContainer {
+    flex-direction: column;
+  }
+
+  #cardGrid {
+    width: 100%;
+    .gridRow{
+      h5{
+        font-size: $font-size-xsmall;
+      }
+      .cardImg{
+        padding: 0;
+        width: 100%;
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  #checkoutContainer {
+    width: 100%;
+    margin: 0;
+    height: 50vh;
+    margin-top: $margin-small; // Use a defined margin variable
+  }
+}
+
+@media (max-width: 425px) {
+  #checkoutContainer{
+    height: 80vh;
+  }
+}

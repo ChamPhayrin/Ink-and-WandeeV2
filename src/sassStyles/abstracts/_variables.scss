@@ -1,0 +1,35 @@
+@use '../abstracts/functions' as *;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+$background-color: #efefef;
+$white-color: #FFFFFF;
+$black-color: #000000;
+$primary-color: #739c6b;
+$secondary-color: #c7d3c6;
+$dark-color: #333;
+$light-color: #fff;
+$hover-color: #aedaa6;
+$shadow-light: rgba(90, 86, 86, 0.413);
+$shadow-heavy: rgba(255, 255, 255, 0.476);
+$light-gray: rgba(0, 0, 0, 0.191);
+
+$font-size-base: toRem(20);
+$font-size-heading: toRem(20);
+$font-size-large: toRem(24);
+$font-size-medium: toRem(30);
+$font-size-small: toRem(16);
+$font-size-xsmall: toRem(12);
+
+$text-color: $dark-color;
+$secondary-text-color: #777;
+$light-text-color: $light-color;
+$hover-text-color: #000000;
+
+$box-shadow-light: 0 5px 10px $shadow-light;
+$box-shadow-heavy: 0 15px 40px $shadow-heavy;
+
+$padding-small: toRem(20);
+$padding-medium: toRem(50);
+$margin-small: toRem(20);
+
+$transition-speed: 0.3s;

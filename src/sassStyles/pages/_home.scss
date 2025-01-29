@@ -1,0 +1,32 @@
+@use '../abstracts/' as *;
+
+#bestSellers {
+  width: 100%;
+  min-height: 40vh;
+}
+
+.cardWrapper {
+  width: 100%;
+  display: flex;
+  margin-top: toRem(30); // Use the toRem function for consistent spacing
+  align-items: center;
+  justify-content: center; // Changed from justify-items to justify-content
+  height: auto;
+  flex-wrap: wrap;
+  gap: $margin-small; // Use a defined margin variable for gap
+}
+
+#genres {
+  @include flex(column, center, center);
+  width: 100%;
+  padding: toRem(40) toRem(10); // Use the toRem function for consistent padding
+  color: $dark-color; // Use a defined color variable instead of hardcoded color
+  height: 90vh;
+
+  .displayCardList {
+    @include flex(row, space-evenly, center);
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: toRem(30); // Use the toRem function for consistent spacing
+  }
+}

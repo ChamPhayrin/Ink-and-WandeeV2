@@ -1,0 +1,135 @@
+@use '../abstracts' as *;
+
+
+// Home Button
+.homeBtn {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  padding: $padding-small 0;
+  transition: all $transition-speed;
+  cursor: pointer;
+  margin: $margin-small;
+
+  a {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: $transition-speed;
+    text-decoration: none;
+    color: #6b0904;
+
+    &::after {
+      content: '»';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -15px;
+      transition: $transition-speed;
+    }
+  }
+
+  &:hover a {
+    padding-right: 15px;
+  }
+
+  &:hover a::after {
+    opacity: 1;
+    right: 0;
+  }
+}
+
+// HERO BANNER STYLES
+#heroBanner {
+  width: 100%;
+  height: 60vh;
+  z-index: -1;
+  object-fit: fill;
+  object-position: center;
+  @include flex(row, space-around, center);
+  background-color: $primary-color;
+  box-shadow: inset 0 5px 10px $shadow-light, inset 0 15px 40px -40px $shadow-heavy;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='24' viewBox='0 0 88 24'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='autumn' fill='%23103c19' fill-opacity='0.4'%3E%3Cpath d='M10 0l30 15 2 1V2.18A10 10 0 0 0 41.76 0H39.7a8 8 0 0 1 .3 2.18v10.58L14.47 0H10zm31.76 24a10 10 0 0 0-5.29-6.76L4 1 2 0v13.82a10 10 0 0 0 5.53 8.94L10 24h4.47l-6.05-3.02A8 8 0 0 1 4 13.82V3.24l31.58 15.78A8 8 0 0 1 39.7 24h2.06zM78 24l2.47-1.24A10 10 0 0 0 86 13.82V0l-2 1-32.47 16.24A10 10 0 0 0 46.24 24h2.06a8 8 0 0 1 4.12-4.98L73.53 24H78zm0-24L48 15l-2 1V2.18A10 10 0 0 1 46.24 0h2.06a8 8 0 0 0-.3 2.18v10.58L73.53 0H78z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+  .details {
+    width: 45%;
+    height: 80%;
+    padding: $padding-medium;
+    background-color: $background-color;
+    border: 2px solid $secondary-color;
+    box-shadow: $box-shadow-light, $box-shadow-heavy;
+    backdrop-filter: blur(2px);
+    @include flex(column, center, start);
+
+    h1 {
+      font-size: $font-size-large;
+      color: #6b0904;
+    }
+
+    h4 {
+      font-size: $font-size-medium;
+      color: $dark-color;
+      font-weight: bolder;
+    }
+
+    p {
+      width: 50%;
+      font-size: $font-size-small;
+    }
+
+    h4, h1, p {
+      padding: $padding-small 0;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+  }
+
+  .image {
+    img {
+      box-shadow: 20px -16px #6b0904;
+      max-width: 80%;
+    }
+  }
+}
+
+// Media Queries for Responsiveness
+@media (max-width: 1070px) {
+  #heroBanner {
+    .details {
+      h1 {
+        font-size: $font-size-medium;
+      }
+
+      h4 {
+        font-size: $font-size-small;
+      }
+
+      p {
+        font-size: $font-size-xsmall;
+        width: auto;
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  #heroBanner {
+    background-image: url('../assets/mary.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    .details {
+      backdrop-filter: blur(5px);
+      background-color: hsla(116, 14%, 80%, 0.711);
+      width: 80%;
+      height: auto;
+      padding: 10px;
+    }
+
+    .image {
+      display: none;
+    }
+  }
+} 

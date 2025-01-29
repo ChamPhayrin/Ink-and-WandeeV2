@@ -1,0 +1,82 @@
+@use '../abstracts' as *;
+
+#accountWrapper {
+  background-color: $light-color;
+  padding: $padding-medium;
+  height: 40%;
+  margin-left: $margin-small;
+  border-radius: 2px;
+  text-align: start;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border: $black-color solid 1px;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  h1 {
+    margin: 0;
+    width: auto;
+    font-size: $font-size-large;
+    color: $primary-color;
+  }
+
+  .accountDetails {
+    div {
+      padding: $padding-small 0;
+      border-bottom: 1px solid $light-gray;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+  button {
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 25px;
+    color: rgb(255, 251, 246);
+    font-weight: bold;
+    background-color: rgb(101, 170, 101);
+    border: none;
+    cursor: pointer;
+  
+    &:hover {
+      background-color: #6b0904;
+    }
+  }
+}
+
+#wishlist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: $padding-medium;
+
+  h2 {
+    padding: $padding-small 0;
+    font-size: $font-size-medium;
+    color: #6b0904;
+  }
+}
+
+#accountContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-content: flex-start;
+  justify-content: space-evenly;
+  gap: $margin-small;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  #accountWrapper {
+    width: 100%;
+    margin: 0;
+  }
+}

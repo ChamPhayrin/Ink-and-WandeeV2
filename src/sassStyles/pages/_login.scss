@@ -1,0 +1,96 @@
+@use '../abstracts' as *;
+
+#loginPage {
+  font-family: 'Poppins', sans-serif;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $background-color; // Use variable
+  background-image: url('/Users/ChamngaryPhayrin/Desktop/REACT-Eccomerce/eccomerce/src/assets/Animated Shape.svg');
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+
+  #loginTitle {
+    padding-bottom: $padding-medium; // Use variable
+    text-align: center;
+    font-size: $font-size-large; // Optional: Use a defined font size variable
+    color: $dark-color; // Optional: Use a defined color variable
+  }
+
+  #loginContainer {
+    background-color: $white-color; // Use a defined color variable instead of $background-color
+    min-width: 35vw;
+    display: flex;
+    padding: $padding-medium; // Use variable
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: $box-shadow-light; // Use variable
+    border-radius: 5px; // Optional: Add border-radius for a softer look
+
+    button {
+      width: 60%;
+      padding: $padding-small; // Use variable for padding
+      margin: $margin-small; // Use variable
+      border-radius: 25px;
+      color: $light-color; // Use variable instead of $white-color for better contrast
+      font-weight: bold;
+      background-color: $primary-color; // Use variable
+      border: none;
+      cursor: pointer; // Optional: Add cursor pointer for better UX
+      transition: background-color 0.3s; // Optional: Add transition for hover effect
+
+      &:hover {
+        background-color: $hover-color; // Optional: Use a defined hover color variable
+      }
+    }
+
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .inputContainer {
+      padding: $padding-small; // Use variable for padding
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+
+      label {
+        padding: 0 0 $padding-small 0; // Use variable for bottom padding
+        font-size: $font-size-base; // Optional: Use a defined font size variable
+      }
+
+      input {
+        padding: $padding-small; // Use variable for padding
+        border-radius: 2px;
+        border: 1px solid $secondary-text-color; // Use a defined color variable instead of rgb(152, 152, 152)
+        margin-bottom: $margin-small; // Optional: Add margin for spacing
+      }
+    }
+
+    #loginLinks {
+      padding: $padding-small; // Use variable for padding
+      width: 80%;
+      display: flex;
+      justify-content: space-around;
+
+      a {
+        text-decoration: none;
+        color: $primary-color; // Use variable
+        transition: color 0.3s; // Optional: Add transition for hover effect
+
+        &:hover {
+          color: $hover-color; // Optional: Use a defined hover color variable
+        }
+      }
+    }
+  }
+}

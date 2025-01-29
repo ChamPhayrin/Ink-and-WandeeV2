@@ -1,0 +1,48 @@
+@use '../abstracts' as *;
+
+.genreDisplay {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+  .title {
+    margin: 0 toRem(10);
+    text-align: center;
+    height: auto;
+  }
+}
+
+.genreWrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 90%;
+  align-items: center;
+  justify-items: center;
+  gap: toRem(10);
+
+  .displayCard {
+    height: 80%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .genreWrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .genreWrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .genreWrapper {
+    grid-template-columns: 1fr;
+  }
+}
