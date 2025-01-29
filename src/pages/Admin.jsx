@@ -28,13 +28,13 @@ export default function Admin() {
 		getUser();
 
 		const getListUsers = async () => {
-			const response = await fetch("http://localhost:3000/getAllUsers");
+			const response = await fetch("https://ink-and-wandeev2-be.onrender.com/getAllUsers");
 			const data = await response.json();
 			setListUsers(data.result);
 		};
 
 		const getMessages = async () => {
-			const response = await fetch("http://localhost:3000/getMessages");
+			const response = await fetch("https://ink-and-wandeev2-be.onrender.com/getMessages");
 			const data = await response.json();
 			setMessages(data.result);
 		};

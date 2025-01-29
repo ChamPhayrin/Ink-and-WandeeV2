@@ -22,7 +22,7 @@ export default function DisplayCard(props) {
             return;
         }
         try {
-            const response = await fetch('http://localhost:3000/addCart', {
+            const response = await fetch('https://ink-and-wandeev2-be.onrender.com/addCart', {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -47,7 +47,7 @@ export default function DisplayCard(props) {
             return;
         }
         try {
-            const response = await fetch('http://localhost:3000/deleteCart', {
+            const response = await fetch('https://ink-and-wandeev2-be.onrender.com/deleteCart', {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -72,7 +72,7 @@ export default function DisplayCard(props) {
             return;
         }
         try {
-            const response = await fetch('http://localhost:3000/savedProducts', {
+            const response = await fetch('https://ink-and-wandeev2-be.onrender.com/savedProducts', {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -97,7 +97,7 @@ export default function DisplayCard(props) {
             return;
         }
         try {
-            const response = await fetch('http://localhost:3000/deleteSaved', {
+            const response = await fetch('https://ink-and-wandeev2-be.onrender.com/deleteSaved', {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

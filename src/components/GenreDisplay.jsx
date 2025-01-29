@@ -7,7 +7,7 @@ export default function GenreDisplay(props) {
 
   useEffect(() => {
     const getBooks = async () => {
-      const response = await fetch('http://localhost:3000/searchBooksByGenre?query=' + props.genre)
+      const response = await fetch('https://ink-and-wandeev2-be.onrender.com/searchBooksByGenre?query=' + props.genre)
       const books = await response.json()
 
       books.splice(3, (books.length - 4))

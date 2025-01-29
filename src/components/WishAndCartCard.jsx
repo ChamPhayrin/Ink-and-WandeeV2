@@ -4,7 +4,7 @@ export default function WishAndCartCard(props) {
 
   const deleteFromCart = async (book) => {
     try {
-      const response = await fetch('http://localhost:3000/deleteCart', {
+      const response = await fetch('https://ink-and-wandeev2-be.onrender.com/deleteCart', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

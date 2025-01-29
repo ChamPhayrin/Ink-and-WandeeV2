@@ -7,7 +7,7 @@ export default function Products() {
 
 	useEffect(() => {
 		const handleProducts= async() =>{
-			const response = await fetch('http://localhost:3000/bookProducts');
+			const response = await fetch('https://ink-and-wandeev2-be.onrender.com/bookProducts');
 			const data = await response.json();
 			setBooks(data);
 		};
@@ -17,7 +17,7 @@ export default function Products() {
 	const handleSearch = async (e) => {
 		e.preventDefault()
 		async function getBooks() {
-			const response = await fetch('http://localhost:3000/searchBooks?query='+search.current.value)
+			const response = await fetch('https://ink-and-wandeev2-be.onrender.com/searchBooks?query='+search.current.value)
 			const data = await response.json()
 
 			setBooks(data)

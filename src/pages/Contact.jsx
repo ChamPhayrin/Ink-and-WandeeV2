@@ -56,7 +56,7 @@ export default function Contact() {
     setErrors([]);
 
 
-    const response = await fetch('http://localhost:3000/message', {
+    const response = await fetch('https://ink-and-wandeev2-be.onrender.com/message', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

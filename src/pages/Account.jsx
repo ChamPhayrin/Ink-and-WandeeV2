@@ -24,7 +24,7 @@ export default function Account() {
 		setError(null);
 
 		try {
-			const response = await fetch("http://localhost:3000/getWishlist", {
+			const response = await fetch("https://ink-and-wandeev2-be.onrender.com/getWishlist", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

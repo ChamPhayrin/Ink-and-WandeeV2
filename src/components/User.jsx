@@ -2,7 +2,7 @@ import React from "react";
 
 export default function User(props) {
   const handleDelete = async (user) => {
-    const response = await fetch('http://localhost:3000/deleteUser', {
+    const response = await fetch('https://ink-and-wandeev2-be.onrender.com/deleteUser', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

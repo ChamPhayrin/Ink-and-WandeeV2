@@ -55,7 +55,7 @@ export default function Signup() {
 		setErrors([]);
 
 		// Send signup request
-		const response = await fetch("http://localhost:3000/register", {
+		const response = await fetch("https://ink-and-wandeev2-be.onrender.com/register", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({
