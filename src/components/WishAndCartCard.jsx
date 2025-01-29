@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useNavigate} from 'react';
 
 export default function WishAndCartCard(props) {
+
+  const navigate = useNavigate()
 
   const deleteFromCart = async (book) => {
     try {
@@ -31,7 +33,7 @@ export default function WishAndCartCard(props) {
         </div>
         <h5 className="padding">{props.title}</h5>
         <p className='padding'>{props.price}</p>
-        <button className='x' onClick={() => {deleteFromCart(props.book); window.location.href='/cart'}}> 
+        <button className='x' onClick={() => {deleteFromCart(props.book); navigate('/cart')}}> 
           x
         </button>
       </div>

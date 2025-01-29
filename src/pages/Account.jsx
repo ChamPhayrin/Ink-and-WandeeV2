@@ -2,12 +2,14 @@ import { jwtDecode } from "jwt-decode";
 import React, { useEffect, useState } from "react";
 import WishAndCartCard from "../components/WishAndCartCard"; // Ensure this import is correct
 import Admin from "./Admin";
+import { useNavigate } from "react-router-dom";
 
 export default function Account() {
 	const [user, setUser] = useState({});
 	const [wishlist, setWishlist] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
+	const navigate = useNavigate()
 
 	const getUser = () => {
 		const token = localStorage.getItem("token");
@@ -58,7 +60,7 @@ export default function Account() {
 	const handleLogout = () => {
 		setUser({});
 		localStorage.clear();
-		window.location.href = "/";
+		navigate("/");
 	};
 
 	return (

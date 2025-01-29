@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { jwtDecode } from "jwt-decode";
 import Message from "../components/Message";
 import User from "../components/User";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Admin() {
@@ -11,7 +12,8 @@ export default function Admin() {
   const seeUsers = useRef(null)
   const seeMessages = useRef(null)
 	const [currentTab, setCurrentTab] = useState("messages");
-
+	const navigate = useNavigate()
+	
   const switchTab = (tab) => {
     setCurrentTab(tab)
   }
@@ -56,14 +58,14 @@ export default function Admin() {
 	useEffect(() => {
 		if (user.is_admin === "0") {
 			alert("You are not authorized to enter this page.");
-			window.location.href = "/";
+			navigate("/");
 		}
 	}, [user]);
 
   const handleLogout = () => {
 		setUser({});
 		localStorage.clear();
-		window.location.href = "/";
+		navigate("/");
 	};
 
 	return (

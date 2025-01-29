@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import React, { useState, useRef, useEffect } from 'react';
 import validator from 'validator';
 
@@ -6,6 +6,7 @@ export default function Login() {
   const [errors, setErrors] = useState([]);
   const username = useRef(null);
   const password = useRef(null);
+  const navigate = useNavigate()
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -53,7 +54,7 @@ export default function Login() {
       setErrors(newErrors);
     } else {
       localStorage.setItem('token', data.token);
-      window.location.href = "/";
+      navigate('/');
     }
   };
 
@@ -61,7 +62,7 @@ export default function Login() {
     // Redirect if the user is already logged in
     if (localStorage.getItem('token')) {
       alert('Already logged in');
-      window.location.href = "/";
+      navigate('/');
     }
   }, []);
 

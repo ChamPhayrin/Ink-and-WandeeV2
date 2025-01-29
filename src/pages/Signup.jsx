@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import validator from "validator";
 
 export default function Signup() {
@@ -11,6 +11,7 @@ export default function Signup() {
 	const email = useRef(null);
 	const password = useRef(null);
 	const repeatPassword = useRef(null);
+	const navigate = useNavigate();
 
 	const handleSignup = async (e) => {
 		e.preventDefault();
@@ -72,7 +73,7 @@ export default function Signup() {
       newErrors.push(data.error)
 			setErrors(newErrors);
 		} else {
-    window.location.href = '/login'
+    navigate('/login')
 
     }
 	};
@@ -80,7 +81,7 @@ export default function Signup() {
     useEffect(() => {
       if(localStorage.getItem('token')) {
         alert('Already logged in');
-        window.location.href = "/";
+        navigate('/');
       }
     }, [])
 
