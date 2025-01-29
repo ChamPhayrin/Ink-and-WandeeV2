@@ -1,6 +1,6 @@
 import React from "react";
 import ProductCard from "../components/ProductCard";
-import HeroBanner from "../components/HeroBanner";
+import HeroBanner from "../components/Herobanner";
 import Slider from "../components/Slider";
 import DisplayCard from "../components/DisplayCard";
 import GenreDisplay from "../components/GenreDisplay";
